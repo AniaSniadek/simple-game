@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple game</title>
 </head>
 <body>
-    hejo
+    <h1>Game "rock, paper, scissors"</h1>
+    
+    <div class="select">
+    
+        <h3>Select one option:</h3>
+    
+        <img data-option="paper" class="first" src="img/papier.jpeg" alt="" title="Paper">
+    
+        <img data-option="rock" src="img/kamien.jpeg" alt="" title="Rock">
+    
+        <img data-option="scissors" src="img/nozyce.jpeg" alt="" title="scissors">
+    
+    </div>
+    
+    <button class="start">Let's play!</button>
+    
+    <div class="panel-left">
+        <h3>Game results</h3>
+        <p>Your choice: <span data-summary="your-choice"></span></p>
+        <p>Computer choice: <span data-summary="ai-choice"></span></p>
+        <h2>Winner: <span data-summary="who-win"></span></h2>
+    </div>
+    
+    <div class="panel-right">
+        <h3>Current results</h3>
+        <p class="numbers">Number of games: <span>0</span></p>
+        <p class="wins">Winnings: <span>0</span></p>
+        <p class="losses">Losers: <span>0</span></p>
+        <p class="draws">Draws: <span>0</span></p>
+    </div>
 </body>
 </html>
