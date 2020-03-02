@@ -18,4 +18,20 @@ function handSelection() {
     this.style.boxShadow = '0 0 0 4px goldenRod'
 }
 
+function aiChoice() {
+    const aiChoice = hands[Math.floor(Math.random() * 3)].dataset.option
+
+    return aiChoice
+}
+
+function startGame() {
+    if(game.playerHand === '')
+        return alert('Please, choose an option')
+    
+    game.aiHand = aiChoice()
+}
+
+
 hands.forEach(hand => hand.addEventListener('click', handSelection))
+
+document.querySelector('.start').addEventListener('click', startGame)
