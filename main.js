@@ -27,11 +27,40 @@ function aiChoice() {
 function checkResult(player, ai) {
     if (player == ai)
         return 'draw';
-    else if ((player === 'papier' && ai === 'kamień') || (player === 'kamień' && ai === 'nożyczki') || (player === 'nożyczki' && ai === 'papier'))
+    else if ((player === 'paper' && ai === 'rock') || (player === 'rock' && ai === 'scissors') || (player === 'scissors' && ai === 'paper'))
         return 'win';
     else
         return 'loss';
 } 
+
+function publishResult(player, ai, result) {
+    document.querySelector('[data-summary="your-choice"]').textContent = player;
+
+    document.querySelector('[data-summary="ai-choice"]').textContent = ai;
+
+    gameSummary.numbers++;
+    document.querySelector('p.numbers span').textContent = gameSummary.numbers;
+
+    if (result === 'win') {
+        gameSummary.wins++;
+        document.querySelector('p.wins span').textContent = gameSummary.wins;
+
+        document.querySelector('[data-summary="who-win"]').textContent = 'YOU WON!!!';
+        document.querySelector('[data-summary="who-win"]').style.color = 'green';
+    } else if (result === 'loss') {
+        gameSummary.losses++;
+        document.querySelector('p.losses span').textContent = gameSummary.losses;
+
+        document.querySelector('[data-summary="who-win"]').textContent = 'Computer won :(';
+        document.querySelector('[data-summary="who-win"]').style.color = 'red';
+    } else {
+        gameSummary.draws++;
+        document.querySelector('p.draws span').textContent = gameSummary.draws;
+
+        document.querySelector('[data-summary="who-win"]').textContent = 'DRAW';
+        document.querySelector('[data-summary="who-win"]').style.color = 'gray';
+    }
+}
 
 function startGame() {
     if(game.playerHand === '')
@@ -39,6 +68,10 @@ function startGame() {
     
     game.aiHand = aiChoice()
     const gameResult = checkResult(game.playerHand, game.aiHand)
+
+    publishResult(game.playerHand, game.aiHand, gameResult)
+
+
 }
 
 
