@@ -9,8 +9,9 @@
 
 h1 {
     text-align: center;
-    margin: 20px 0;
-    
+    background-color: gray;
+    height: 5vh;
+    line-height: 5vh;
 }
 
 h3 {
@@ -90,4 +91,10 @@ span {
 
 .panel-right p {
     padding: 5px;
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 16px;
+    }
 }
