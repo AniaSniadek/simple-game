@@ -1,2 +1,2 @@
 # Rock-paper-scissors
-Simple rock-paper-scissors game written during the learning of JavaScript course
+Simple rock-paper-scissors game written during the JavaScript course
